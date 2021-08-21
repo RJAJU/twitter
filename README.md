@@ -1,5 +1,11 @@
 # twitter
 
+Technologies used:
+   1. Language: Python 3.7
+   2. Tool    : Django 3.2.6
+   3. DataBase: Sqlite3
+
+
 1. Clone git repo
    git clone https://github.com/RJAJU/twitter.git
 
