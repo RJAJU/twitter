@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags  %}
+
+{% block container %}
+  <div class="container">
+      <div class="row">
+          <div class="col">
+              <table class="table">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for obj in object_list %}
+                        <tr>
+                            <td>{{obj.user.username}}</td>
+                            <td>{{obj.text}}</td>
+                            <td>
+                                {% if user != obj.user %}
+                                    <a class="btn btn-primary" href="{% url 'chat:follow' %}?twitte_id={{obj.id}}">Follow</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+          </div>
+      </div>
+</div>
+
+{% endblock %}
+
